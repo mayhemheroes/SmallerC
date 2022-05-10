@@ -1,0 +1,6 @@
+project: rnshah9/mayhem-smallerc
+target: smlrc
+
+cmds:
+  - cmd: /SmallerC/smlrc @@ a.out
+    filepath: /test.c
