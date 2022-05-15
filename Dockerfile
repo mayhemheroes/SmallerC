@@ -1,10 +1,9 @@
 # Build Stage
-FROM --platform=linux/amd64 ubuntu:20.04 as builder
+FROM --platform=linux/amd64 ubuntu:20.04
 RUN apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt-get install  -y vim less man wget tar git gzip unzip make cmake software-properties-common curl 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install  -y nasm
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y make gcc nasm
 
 ADD . /SmallerC
 WORKDIR /SmallerC
 RUN ./configure
-RUN make
+RUN make 
