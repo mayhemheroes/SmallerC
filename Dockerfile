@@ -7,3 +7,12 @@ ADD . /SmallerC
 WORKDIR /SmallerC
 RUN ./configure
 RUN make 
+
+RUN mkdir -p /deps
+RUN ldd /SmallerC/smlrc | tr -s '[:blank:]' '\n' | grep '^/' | xargs -I % sh -c 'cp % /deps;'
+
+FROM ubuntu:20.04
+
+COPY --from=builder /deps /deps
+COPY --from=builder /SmallerC/smlrc /SmallerC/smlrc
+ENV LD_LIBRARY_PATH=/deps

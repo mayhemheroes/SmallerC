@@ -1,6 +1,6 @@
-project: rnshah9/mayhem-smallerc
+project: smallerc
 target: smlrc
 
 cmds:
-  - cmd: /SmallerC/smlrc @@ a.out
+  - cmd: /SmallerC/smlrc /test.c /dev/null
     filepath: /test.c
