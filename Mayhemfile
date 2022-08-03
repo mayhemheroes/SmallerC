@@ -2,5 +2,4 @@ project: smallerc
 target: smlrc
 
 cmds:
-  - cmd: /SmallerC/smlrc /test.c /dev/null
-    filepath: /test.c
+  - cmd: /smlrc @@ /dev/null
